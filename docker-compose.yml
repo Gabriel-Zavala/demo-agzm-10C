@@ -2,10 +2,10 @@ services:
   client:
     build:
       context: ./client
-      ports:
+    ports:                 # <--- Movido fuera de 'build'
       - "5173:80"
-      restar: unless-stopped
-      networks:
+    restart: unless-stopped  # <--- Corregido de 'restar' y movido
+    networks:              # <--- Movido fuera de 'build'
       - demo-net
 
 networks:
